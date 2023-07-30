@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="main.css">
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+<div class="wrapper">
+  <div class="js-component" data-name="header" data-ext="html"></div>
+  <main>
+    <h3 class="wine_club_h">Join Our Wine Club – Select An Option Below and Get Subscribed!</h3>
+    <div class="wine_club content_boxes">
+
+        <div class="box1">
+          <div class="top_content">
+            <h3>Enthusiast</h3>
+            <p>Discover the Finger Lakes</p>
+        </div>
+            <div class="price_zone">
+              <sup>$</sup><span>350</span><sub>/yr</sub>
+        </div>
+              <div class="wine_club_content">
+          <ul>
+            <li>3 bottles – Quarterly</li>
+            <li>Free Wine Flight – $80 Value! (1 per quarter. Member-only)</li>
+            <li>10% Off in-store & Online (Vinifera & FLX Goods)</li>
+            <li>Exclusive invitation to Pick up parties</li>
+            <li>10% off discount on ticketed events</li>
+            <li>2 free Tickets for 1 Linden Wine Series Event of your choice. ($80 Value)</li>
+          </ul>
+          <p class="join">Join Now</p>
+        </div>
+        </div>
+        <div class="box1">
+        <div class="top_content">
+          <h3>Connoisseur</h3>
+          <p>Finger Lake’s Finest</p>
+        </div>
+          <div class="price_zone">
+            <sup>$</sup><span>475</span><sub>/yr</sub>
+        </div>
+            <div class="wine_club_content">
+          <ul>
+            <li>3 bottles – Quarterly</li>
+            <li>Free Wine flight for 2 guests – $160 Value! (By Reservation – 1 Per Quarter)</li>
+            <li>15% Off in-store & Online (Vinifera & FLX Goods)</li>
+            <li>Exclusive invitation to Pick up parties</li>
+            <li>15% off discount on ticketed events</li>
+            <li>2 Free tickets for 2 Linden Wine Series Events of your choice ($160 Value)</li>
+          </ul>
+              <p class="join">Join Now</p>
+        </div>
+        </div>
+        <div class="box1">
+          <div class="top_content">
+            <h3>Aficionado</h3>
+            <p>Sommelier’s Selection</p>
+        </div>
+            <div class="price_zone">
+              <sup>$</sup><span>999</span><sub>/yr</sub>
+          </div>
+              <div class="wine_club_content">
+            <ul>
+              <li>6 Bottles – Quarterly</li>
+              <li>VIP Tastings for 2 Guests – $240 Value! (By Reservation – 1 per quarter)</li>
+              <li>15% Off in-store & Online (Vinifera & FLX Goods)</li>
+              <li>Exclusive invitation to Pick up parties</li>
+              <li>15% off discount on ticketed events</li>
+              <li>2 FREE season tickets to our Linden Wine Series ($400 Value)</li>
+              <li>Personal Shopper when you visit us</li>
+              <li>Access to Private Library wines</li>
+            </ul>
+                <p class="join">Join Now</p>
+          </div>
+        </div>
+
+    </div>
+  </main>
+  <footer>
+    <div class="js-component" data-name="footer" data-ext="html"></div>
+  </footer>
+</div>
+<script>
+  const components = document.querySelectorAll('.js-component')
+  const loadComponent = async c => {
+    const { name, ext } = c.dataset
+    const response = await fetch(`${name}.${ext}`)
+    const html = await response.text()
+    c.innerHTML = html
+  }
+  [...components].forEach(loadComponent)
+</script>
+</body>
+</html>
